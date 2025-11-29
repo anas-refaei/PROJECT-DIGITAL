@@ -27,5 +27,11 @@
     <ClCompile Include="rca4.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="half_adder_test_cases.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="full_adder_test_cases..cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
