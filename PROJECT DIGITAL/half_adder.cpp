@@ -1,18 +1,21 @@
-//What is a Module ?
-//A module is like a building block or component in digital design.Think of it like a box with :
-//Inputs(wires going IN)
-//Outputs(wires coming OUT)
-//Logic inside(what the box does)
-
 module half_adder(
-    input  logic a,    // First input bit
-    input  logic b,    // Second input bit
-    output logic s,    // Sum output (a XOR b)
-    output logic c     // Carry output (a AND b)
+    input  logic a,    // First input
+    input  logic b,    // Second input
+    output logic s,    // (A XOR B)
+    output logic c     // (A AND B)
 );
 
-// Half Adder Logic
-assign s = a ^ b;  // Sum = a XOR b
-assign c = a & b;  // Carry = a AND b
+xor_gate sum_inst(
+    .a(a),
+    .b(b),
+    .y(s)
+);
+
+
+and_gate carry_inst(
+    .a(a),
+    .b(b),
+    .y(c)
+);
 
 endmodule

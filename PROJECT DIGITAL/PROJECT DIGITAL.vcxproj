@@ -123,13 +123,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="and-gate.cpp" />
     <ClCompile Include="alu4.cpp" />
     <ClCompile Include="full_adder.cpp" />
     <ClCompile Include="full_adder_test_cases..cpp" />
     <ClCompile Include="half_adder.cpp" />
     <ClCompile Include="half_adder_test_cases.cpp" />
+    <ClCompile Include="or-gate.cpp" />
     <ClCompile Include="rca4.cpp" />
+    <ClCompile Include="tb-and-gate.cpp" />
+    <ClCompile Include="tb-or-gate.cpp" />
     <ClCompile Include="tb-rca4.cpp" />
+    <ClCompile Include="tb-xor-gate.cpp" />
+    <ClCompile Include="xor-gate.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

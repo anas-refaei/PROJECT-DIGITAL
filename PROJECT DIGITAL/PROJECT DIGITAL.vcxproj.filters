@@ -36,5 +36,23 @@
     <ClCompile Include="tb-rca4.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="and-gate.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="or-gate.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tb-and-gate.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tb-or-gate.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tb-xor-gate.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xor-gate.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
