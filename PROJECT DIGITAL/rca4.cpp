@@ -1,13 +1,16 @@
-module rca_4bit(
-    input  logic a0, a1, a2, a3,
-    input  logic b0, b1, b2, b3,
-    input  logic cin,
-    output logic s0, s1, s2, s3,
-    output logic cout
+module rca4 (
+    input  logic [3:0] A,
+    input  logic [3:0] B,
+    input  logic       Cin,
+    output logic [3:0] Sum,
+    output logic       Cout
 );
-logic c0, c1, c2;
-full_adder fa0(.a(a0), .b(b0), .cin(cin), .s(s0), .cout(c0));
-full_adder fa1(.a(a1), .b(b1), .cin(c0), .s(s1), .cout(c1));
-full_adder fa2(.a(a2), .b(b2), .cin(c1), .s(s2), .cout(c2));
-full_adder fa3(.a(a3), .b(b3), .cin(c2), .s(s3), .cout(cout));
+
+    logic c0, c1, c2; 
+
+    full_adder fa0 (.a(A[0]), .b(B[0]), .cin(Cin), .s(Sum[0]), .cout(c0));
+    full_adder fa1 (.a(A[1]), .b(B[1]), .cin(c0),  .s(Sum[1]), .cout(c1));
+    full_adder fa2 (.a(A[2]), .b(B[2]), .cin(c1),  .s(Sum[2]), .cout(c2));
+    full_adder fa3 (.a(A[3]), .b(B[3]), .cin(c2),  .s(Sum[3]), .cout(Cout));
+
 endmodule
