@@ -1,0 +1,31 @@
+module alu_logic (
+    input  logic [3:0] A,
+    input  logic [3:0] B,
+    input  logic [1:0] sel,   // 00 AND, 01 OR, 10 XOR, 11 NOT A
+    output logic [3:0] R
+);
+
+    // Bitwise gate outputs
+    logic [3:0] and_r, or_r, xor_r, not_r;
+
+    genvar i;
+    generate
+        for (i = 0; i < 4; i = i + 1) begin : GATES
+            and_gate u_and (.a(A[i]), .b(B[i]), .y(and_r[i]));
+            or_gate  u_or  (.a(A[i]), .b(B[i]), .y(or_r[i]));
+            xor_gate u_xor (.a(A[i]), .b(B[i]), .y(xor_r[i]));
+            not      u_not (not_r[i], A[i]);   // primitive NOT
+        end
+    endgenerate
+
+    always @(*) begin
+        case (sel)
+            2'b00: R = and_r;
+            2'b01: R = or_r;
+            2'b10: R = xor_r;
+            2'b11: R = not_r;
+            default: R = 4'b0000;
+        endcase
+    end
+
+endmodule
