@@ -1,0 +1,29 @@
+module tb_alu_logic;
+
+    logic [3:0] A, B;
+    logic [1:0] sel;
+    logic [3:0] R;
+
+    alu_logic dut (
+        .A(A),
+        .B(B),
+        .sel(sel),
+        .R(R)
+    );
+
+    initial begin
+        // AND
+        A = 4'b1100; B = 4'b1010; sel = 2'b00; #10; // 1000
+
+        // OR
+        A = 4'b0101; B = 4'b0011; sel = 2'b01; #10; // 0111
+
+        // XOR
+        A = 4'b0110; B = 4'b0011; sel = 2'b10; #10; // 0101
+
+        // NOT A
+        A = 4'b0101; B = 4'b0000; sel = 2'b11; #10; // 1010
+
+        $stop;
+    end
+endmodule
