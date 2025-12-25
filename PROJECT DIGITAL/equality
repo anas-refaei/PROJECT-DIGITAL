@@ -1,0 +1,14 @@
+module alu_eq (
+    input  logic [3:0] A,
+    input  logic [3:0] B,
+    output logic [3:0] R   // 0001 if equal else 0000
+);
+
+    always @(*) begin
+        if (A == B)
+            R = 4'b0001;
+        else
+            R = 4'b0000;
+    end
+
+endmodule
