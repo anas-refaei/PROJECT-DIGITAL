@@ -1,0 +1,29 @@
+module tb_alu_shift;
+
+    logic [3:0] A;
+    logic [1:0] sel;
+    logic [3:0] R;
+    logic C;
+
+    alu_shift dut (
+        .A(A),
+        .sel(sel),
+        .R(R),
+        .C(C)
+    );
+
+    initial begin
+        // -------- LSL --------
+        A = 4'b1001; sel = 2'b00; #10;  // 1001 << 1 = 0010, C=1
+
+        // -------- LSR --------
+        A = 4'b1001; sel = 2'b01; #10;  // 1001 >> 1 = 0100, C=1
+
+        // -------- ASR --------
+        A = 4'b1001; sel = 2'b10; #10;  // 1001 >>> 1 = 1100, C=1
+
+        A = 4'b0101; sel = 2'b10; #10;  // 0101 >>> 1 = 0010, C=1
+
+        $stop;
+    end
+endmodule
