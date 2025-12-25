@@ -1,0 +1,19 @@
+module tb_alu_gt;
+
+    logic [3:0] A, B;
+    logic [3:0] R;
+
+    alu_gt dut (
+        .A(A),
+        .B(B),
+        .R(R)
+    );
+
+    initial begin
+        A = 4'b1001; B = 4'b0011; #10;  // 9 > 3 -> 1
+        A = 4'b0010; B = 4'b0100; #10;  // 2 > 4 -> 0
+        A = 4'b0111; B = 4'b0111; #10;  // equal -> 0
+
+        $stop;
+    end
+endmodule
